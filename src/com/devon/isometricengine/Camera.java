@@ -36,7 +36,7 @@ public class Camera
 		this.mouseControls = new CameraMouseControls(this);
 	}
 	
-	protected ArrayList<Float> getViewFrustram()
+	protected ArrayList<Float> getViewFrustrum()
 	{
 		ArrayList<Float> frustram = new ArrayList<Float>();
 		
@@ -75,7 +75,7 @@ public class Camera
 	 */
 	public boolean inFrustram(float x, float y)
 	{
-		ArrayList<Float> frustram = getViewFrustram();
+		ArrayList<Float> frustram = getViewFrustrum();
 		if(x >= frustram.get(0) && x <= frustram.get(2) && y >= frustram.get(1) && y <= frustram.get(3))
 			return true;
 		
@@ -88,13 +88,13 @@ public class Camera
 		this.centerOnPos.y = y;
 	}
 		
-	public void update(GameContainer gc, int delta) 
+	public void update(GameContainer gc, int delta, OutdoorLevel level) 
 	{
-		handleInput(gc, delta);
+		handleInput(gc, delta, level);
 	}
 	
 	//handle player's input
-	private void handleInput(GameContainer gc, int delta) 
+	private void handleInput(GameContainer gc, int delta, OutdoorLevel level) 
 	{
 		Input input = gc.getInput();
 		input.addMouseListener(this.mouseControls);
@@ -111,7 +111,7 @@ public class Camera
 		//space bar
 		if(input.isKeyDown(Input.KEY_SPACE))
 		{
-
+			//level.cubes = level.rotateMatrixRight(level.map);
 		}
 		
 		//move left

@@ -115,6 +115,40 @@ public class OutdoorLevel extends Level
 		
 	}
 
+	public double[][] rotateMatrixRight(double[][] map2)
+	{
+	    /* W and H are already swapped */
+	    int w = map2.length;
+	    int h = map2[0].length;
+
+	    double[][] ret = new double[h][w];
+	    
+	    for (int i = 0; i < h; ++i)
+	    {
+	        for (int j = 0; j < w; ++j) 
+	        {
+	        	ret[i][j] = map2[w - j - 1][i];
+    
+	        }
+	    }
+	    return ret;
+	}
+
+
+	public int[][] rotateMatrixLeft(int[][] matrix)
+	{
+	    /* W and H are already swapped */
+	    int w = matrix.length;
+	    int h = matrix[0].length;   
+	    int[][] ret = new int[h][w];
+	    for (int i = 0; i < h; ++i) {
+	        for (int j = 0; j < w; ++j) {
+	            ret[i][j] = matrix[j][h - i - 1];
+	        }
+	    }
+	    return ret;
+	}
+	
 	public void draw(float x, float y, Graphics g, Camera camera)
 	{
 		this.cubesRendered = 0;
