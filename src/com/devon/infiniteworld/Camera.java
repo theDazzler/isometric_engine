@@ -6,7 +6,11 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.geom.Vector2f;
 
-
+/**
+ * 
+ * @author Devon
+ *
+ */
 public class Camera
 {
 	private int uiOffest = 0; //set this if a menu is placed at the top of the screen, it will make sure nothing under the menu is rendered
